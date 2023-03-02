@@ -10,7 +10,7 @@ import yahoofinance.histquotes.HistQuotesRequest;
 import yahoofinance.histquotes.Interval;
 import yahoofinance.quotes.fx.FxQuote;
 import yahoofinance.quotes.csv.FxQuotesRequest;
-import yahoofinance.quotes.csv.StockQuotesData;
+import yahoofinance.quotes.csv.StockQuotesData;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
 import yahoofinance.quotes.csv.StockQuotesRequest;
 import yahoofinance.quotes.query1v7.FxQuotesQuery1V7Request;
 import yahoofinance.quotes.query1v7.StockQuotesQuery1V7Request;
@@ -29,8 +29,9 @@ public class StockPriceHistory
     public void run() {
         try {
             Stock stock = YahooFinance.get(TICKER, true);
+            System.out.println("date,closing price");
             System.out.println(stock);
-            System.out.println(stock.getHistory());
+            System.out.println(stock.getHistory(Interval.DAILY));
         } catch (Exception e) {
             System.out.println("Error in stock call");    
         }
